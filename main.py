@@ -13,8 +13,8 @@ def load_and_preprocess_image(file_path):
     return img_array
 
 # بارگذاری داده‌ها
-cat_images = [load_and_preprocess_image(f'data/train/cats/{filename}') for filename in os.listdir('data/train/cats')]
-dog_images = [load_and_preprocess_image(f'data/train/dogs/{filename}') for filename in os.listdir('data/train/dogs')]
+cat_images = [load_and_preprocess_image(f'/content/kagglecatsanddogs_3367a/PetImages/Cat/{filename}') for filename in os.listdir('/content/kagglecatsanddogs_3367a/PetImages/Cat')]
+dog_images = [load_and_preprocess_image(f'/content/kagglecatsanddogs_3367a/PetImages/Dog/{filename}') for filename in os.listdir('/content/kagglecatsanddogs_3367a/PetImages/Dog')]
 
 X = np.array(cat_images + dog_images)
 y = np.array([0] * len(cat_images) + [1] * len(dog_images))  # 0 برای گربه، 1 برای سگ
